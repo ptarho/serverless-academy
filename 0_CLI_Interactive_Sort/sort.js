@@ -8,7 +8,7 @@ async function askForInput() {
     const rl = readline.createInterface({ input, output });
     const data = [] // user input data
     const answer = await rl.question('Hello enter 10 words or digits deviding them in space: '); // get user input
-    data.push(...answer.split(' ')) // save it into array
+    data.push(...answer.split(' ').filter(e => e !== '')) // save it into array
     
     if (answer === 'exit') { 
         rl.close();
